@@ -7,10 +7,10 @@ function imc(){
     try {
         if(name.value == "" || weight.value == "" || height.value == "" || p.value == ""){
             alert("Por favor, preencha todos os campos")
-        }
+        }else{
         let calcImc = eval(weight) / eval(height**2);
         let indiceWeight = ""
-        calcImc = calcImc.toFixed(2)
+        calcImc = calcImc.toFixed(1)
         if(calcImc < 18.5){
             indiceWeight = "Abaixo do peso";
         }else if(calcImc >=18.5 && calcImc <= 24.9 ){
@@ -18,12 +18,13 @@ function imc(){
         }else if(calcImc >=25 && calcImc >= 29.9){
             indiceWeight = "Sobrepeso";
         }else{
-            indiceWeight = "Vai ao médico";
+            
         }
         p.textContent = `O resultado é :${calcImc}. ${indiceWeight}`
         document.getElementById("weight").value = "";
         document.getElementById("height").value = "";
         document.getElementById("name").value = "";
+    }
     }catch(e){
         console.log(e)
     }    
