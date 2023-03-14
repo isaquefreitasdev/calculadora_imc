@@ -12,7 +12,7 @@ function imc(){
     const calc = document.querySelector(".calc");
 
     try {
-        if( weight.value === "" || height.value === "" || name.value === ""|| p.value == ""){
+        if( !weight.value  || !height.value  || !name.value|| p.value == ""){
             alert("Por favor, preencha todos os campos")
         }else{
         let calcImc = eval(weight) / eval(height**2);
