@@ -6,12 +6,12 @@
 
 function imc(){
     const name = document.getElementById("name");
-    const weight = document.getElementById("weight").value;
+    const weight = document.getElementById("weight").value.replace("kg","");
     const height = document.getElementById("height").value.replace(",",".");
     const p = document.getElementById("p");
     const calc = document.querySelector(".calc");
 
-
+    try{
         if( name !== ""  && height !== ""  && weight !== "" ){
                 let calcImc = eval(weight) / eval(height**2);
                 let indiceWeight = ""
@@ -33,6 +33,8 @@ function imc(){
 
         }
             
-      
+    }catch(e){
+        alert("Por favor, preencha todos os campos")
+    }
     
 }
